@@ -14,6 +14,8 @@ public class W1D1Lab2 {
 			if(s.charAt(left) != s.charAt(right)) {
 				return false;
 			}
+			left ++;
+			right --;
 		}
 		
 		return true;
@@ -28,6 +30,8 @@ public class W1D1Lab2 {
 			if(arr[left] != arr[right]) {
 				return false;
 			}
+			left ++;
+			right --;
 		}
 		return true;
 	}
@@ -42,6 +46,8 @@ public class W1D1Lab2 {
 			if(arr[left] %2 != arr[right]% 2 ) {
 				return false;
 			}
+			left ++;
+			right --;
 		}
 		return true;
 	}
