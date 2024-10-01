@@ -20,7 +20,7 @@ public class Prob3_Test {
         String t3 = "silent";
         System.out.println("Test Case 3: " + s3 + " and " + t3 + " -> " + prob3.isAnagram(s3, t3)); 
 
-        // Test case 4: Longer strings
+        // Test case 4: Anagram
         String s4 = "aabbcc";
         String t4 = "abcabc";
         System.out.println("Test Case 4: " + s4 + " and " + t4 + " -> " + prob3.isAnagram(s4, t4)); 

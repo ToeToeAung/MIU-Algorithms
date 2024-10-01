@@ -15,6 +15,7 @@ public class Prob1_Test {
 	      
 	        System.out.println("Test Case 3: Pop element: " + stack.pop()); 
 	        System.out.println("Test Case 4: Top element after pop: " + stack.top());
+	                
 
 	}
 }
