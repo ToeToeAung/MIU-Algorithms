@@ -1,0 +1,21 @@
+package W1D1Labs;
+import java.util.HashMap;
+
+public class Prob3 {
+	  public boolean isAnagram(String s, String t) {
+			if(s.length()!=t.length()) return false;
+			char ch;
+			HashMap<Character,Integer> hashMap = new HashMap<Character, Integer>();
+			for(int i=0;i<s.length();i++) {
+				ch = s.charAt(i);
+				if(hashMap.containsKey(ch)) hashMap.put(ch, hashMap.get(ch)+1);
+				else hashMap.put(ch, 1);
+			}
+			for(int i=0;i<t.length();i++) {
+				ch = t.charAt(i);
+				if(hashMap.containsKey(ch) == false || hashMap.get(ch) == 0) return false;
+				else hashMap.put(ch, hashMap.get(ch)-1);
+			}
+	        return true;
+	    }
+}

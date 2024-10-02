@@ -1,0 +1,27 @@
+package W1D1Labs;
+import java.util.*;
+
+public class Prob2 {
+	public ListNode reverseList(ListNode head) {
+	    if (head == null) {
+	        return null;
+	    }
+
+	    ListNode node = head,
+	            prev = null,
+	            reverseNode = null;
+
+	    while (node != null) {
+	        final ListNode next = node.next;
+
+	        if (node.next == null) {
+	            reverseNode = node;
+	        }
+	        node.next = prev;
+	        prev = node;
+	        node = next;
+	    }
+
+	    return reverseNode;
+	}
+}

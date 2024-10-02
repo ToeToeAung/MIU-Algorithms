@@ -1,0 +1,20 @@
+package W1D1Labs;
+
+public class Prob2_Test {
+
+	public static void main(String[] args) {
+		 	Node head = new Node(5);
+	        head.next = new Node(8);
+	        head.next.next = new Node(9);
+	        head.next.next.next = new Node(7);
+	        head.next.next.next.next = new Node(3);
+	        System.out.print("Original Linked list:");
+	        Prob2.printNodes(head);
+	        
+	        head = Prob2.reverseList(head);
+
+	        System.out.print("\nReversed Singly Linked List:");
+	        Prob2.printNodes(head);
+	}
+
+}

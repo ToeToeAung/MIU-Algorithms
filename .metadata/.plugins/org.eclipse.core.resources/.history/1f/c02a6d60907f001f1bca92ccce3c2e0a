@@ -1,0 +1,22 @@
+package W1D1Labs;
+
+import java.util.List;
+
+public class Prob2_Test {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	private static void testReverseList(List<Integer> input, List<Integer> expected) {
+	    List<Integer> result = rever(input);
+	    Prob2 prob2=new Prob2();
+	    
+	    if (result.equals(expected)) {
+	        System.out.println("Test Passed: " + input + " reversed to " + result);
+	    } else {
+	        System.out.println("Test Failed: Expected " + expected + ", but got " + result);
+	    }
+	}
+
+}

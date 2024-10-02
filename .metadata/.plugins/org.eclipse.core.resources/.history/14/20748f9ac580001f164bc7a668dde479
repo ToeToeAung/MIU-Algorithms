@@ -1,0 +1,26 @@
+package Tutorials;
+
+public class Average {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static double findAverage(int[][] matrix) {
+		int sum = 0;
+		int count = 0;
+		int n = matrix.length;
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j< matrix[i].length;j++) {
+				if(matrix[i][j] != 0) {
+					sum += matrix[i][j];
+					count ++;
+				}
+			}
+		}
+		return (count>0) ? (double) sum/count : 0;
+	}
+
+}

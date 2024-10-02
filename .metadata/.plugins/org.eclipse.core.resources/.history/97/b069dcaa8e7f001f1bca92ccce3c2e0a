@@ -1,0 +1,22 @@
+package W1D1Labs;
+import java.util.HashMap;
+
+public class Prob3 {
+	  public boolean isAnagram(String s, String t) {
+	        // If the lengths of the strings are different, they cannot be anagrams
+	        if (s.length() != t.length()) {
+	            return false;
+	        }
+
+	        // Convert both strings to character arrays
+	        char[] sArray = s.toCharArray();
+	        char[] tArray = t.toCharArray();
+
+	        // Sort both character arrays
+	        Arrays.sort(sArray);
+	        Arrays.sort(tArray);
+
+	        // Compare the sorted arrays to check if they are identical
+	        return Arrays.equals(sArray, tArray);
+	    }
+}

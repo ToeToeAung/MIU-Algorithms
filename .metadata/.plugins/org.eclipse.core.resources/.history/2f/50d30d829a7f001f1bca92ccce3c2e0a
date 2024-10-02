@@ -1,0 +1,21 @@
+package W1D1Labs;
+
+public class Prob1_Test {
+
+	public static void main(String[] args) {
+		  Prob1 stack = new Prob1();
+	      
+	        System.out.println("Test Case 1: Is the stack empty? " + stack.empty()); 
+	     
+	        stack.push(3);
+	        stack.push(5);
+	        stack.push(6);
+	        stack.push(8);
+	        System.out.println("Test Case 2: Top element after pushing: " + stack.top()); 
+
+	        // Test case 3: Pop an element
+	        System.out.println("Test Case 3: Popped element: " + stack.pop()); // Expected: 3
+	        System.out.println("Test Case 3: Top element after pop: " + stack.top()); // Expected: 2
+
+	}
+}
