@@ -37,6 +37,25 @@ public class W1D2Lab {
 	}
 	
 	
+
+    public static int[] consecutiveSum3(int[] A, int k) {
+     
+        int[] sum = new int[A.length + 1];
+        for (int i = 1; i <= A.length; i++) {
+        	sum[i] = sum[i - 1] + A[i - 1];
+        }
+
+   
+        int[] result = new int[A.length - k + 1];
+        
+     
+        for (int i = 0; i <= A.length - k; i++) {
+            result[i] = sum[i + k] - sum[i];
+        }
+
+        return result;
+    }
+    
 	public static void main(String[] args) {
 		//Test case 1
 		int k=3;
@@ -55,6 +74,16 @@ public class W1D2Lab {
 
         System.out.print("Test Case 2 \n");
         for (int s : sum1) {
+            System.out.print( s + " ");
+        }
+        
+        System.out.print("\n****************\n");
+        //Test case 3
+    	int[] arr2 = {22, 7, 11, 33, 3, 5, 4, 12};
+        int[] sum2 = consecutiveSum3(arr2, k);
+
+        System.out.print("Test Case 3 \n");
+        for (int s : sum2) {
             System.out.print( s + " ");
         }
 	}

@@ -1,4 +1,4 @@
-package W1D1Tutorials;
+package Tutorials;
 
 public class W1D1Lab2 {
 

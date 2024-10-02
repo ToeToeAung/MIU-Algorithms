@@ -1,4 +1,4 @@
-package W1D1Tutorials;
+package Tutorials;
 
 class Node {
     int val;
