@@ -30,11 +30,9 @@ public class W1D4Tutorial {
 
         }   
 
-        System.out.println("Number of ways to reach A1 (grid[4][2]): " + grid[4][2]);  // Example for one "R"
+        System.out.println("Number of ways to reach A1 (grid[5][2]): " + grid[5][2]);  // Example for one "R"
 
-        System.out.println("Number of ways to reach A2 (grid[4][4]): " + grid[5][4]);  // Example for another "R"
+        System.out.println("Number of ways to reach A2 (grid[5][4]): " + grid[5][4]);  // Example for another "R"
 
     }
-
-
 }
