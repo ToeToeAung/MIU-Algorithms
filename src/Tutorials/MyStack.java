@@ -21,7 +21,6 @@ public class MyStack {
         if (empty()) {
             return ""; 
         }
-
  
         while (queue1.size() > 1) {
         	System.out.println("Queue Poll " + queue1.poll());

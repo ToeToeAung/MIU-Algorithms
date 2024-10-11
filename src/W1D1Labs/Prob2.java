@@ -2,20 +2,15 @@ package W1D1Labs;
 
 public class Prob2 {
 
-static Node reverseList(Node head) {        
-    
-        Node curr = head, prev = null, next;
-    
-        while (curr != null) {            
-    
-            next = curr.next;           
-        
-            curr.next = prev;
-        
+static Node reverseList(Node head) {       
+  
+        Node curr = head, prev = null, next;    
+        while (curr != null) {                
+            next = curr.next;                   
+            curr.next = prev;        
             prev = curr;
             curr = next;
         }        
-
         return prev;
     }
 
