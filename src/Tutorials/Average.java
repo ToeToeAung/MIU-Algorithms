@@ -35,7 +35,6 @@ public class Average {
             {0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0}
         };
-
       
         System.out.println("Average of all No Zero: " + findAverage(allNoZero));
         System.out.println("Average of lowerTriangular: " + findAverage(lowerTriangular));
