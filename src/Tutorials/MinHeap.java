@@ -1,5 +1,6 @@
 package Tutorials;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MinHeap {
     private ArrayList<Integer> heap;
@@ -82,21 +83,34 @@ public class MinHeap {
         System.out.println("Heap: " + heap);
     }
 
+    
+     public static void insertMaxHeap(int[] A, int n, int value) {
+    	 if (n >= A.length - 1) {
+             A = Arrays.copyOf(A, A.length + 1);  // Resize the array
+         }
+    	 
+    	 System.out.print("N" + A.length + "\n");
+    	 A[n]= value;    	 
+    	 int i = n;
+    	 int parent =  (int)Math.floor((n/2));
+    	 if(A[parent] < A[i]) {
+    		 int temp = A[parent];
+    		 A[parent] = A[i];
+    		 A[i] = temp;
+    	 }else {
+    		 return;
+    	 }
+    	 
+    	 for (int a : A) {
+             System.out.println("Heap " + a);
+         }
+     }
 
-    public static void main(String[] args) {
-        MinHeap minHeap = new MinHeap();
-
-        minHeap.insert(10);
-        minHeap.insert(20);
-        minHeap.insert(5);
-        minHeap.insert(67);
-        minHeap.insert(9);
-        minHeap.insert(8);
-
-        System.out.println("After inserting elements:");
-        minHeap.displayHeap();
-
-        System.out.println("Removed Min: " + minHeap.removeMin());
-        minHeap.displayHeap();
-    }
+    public static void main(String[] args) {          
+        
+        int[] A= {70,50,40,45,35,39,16,10,9};
+        insertMaxHeap(A,9,60);  
+        
+        }
+    
 }
