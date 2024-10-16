@@ -7,25 +7,19 @@ Write your code in such a way that given an input, your program will return the 
 
 public class MaxHeapBottomUp{
 
-    private static int comparisonCount = 0;  
-
-  
+    private static int comparisonCount = 0;    
     public static void buildMaxHeapBottomUp(int[] A) {
-        int n = A.length;
-      
+        int n = A.length;      
         for (int i = n / 2 - 1; i >= 0; i--) {
             downHeap(A, i, n);  
         }
     }
 
     
-    public static void downHeap(int[] A, int i, int n) {
-        int j = i;
-        int k = maxChildIndex(A, j, n);  
-   
+    public static void downHeap(int[] A, int j, int n) {    
+        int k = maxChildIndex(A, j, n);     
         while (k != -1) {
             comparisonCount++;  
-
             if (A[j] < A[k]) {  
                 swap(A, j, k); 
                 j = k;  
@@ -38,8 +32,15 @@ public class MaxHeapBottomUp{
 
 
     public static int maxChildIndex(int[] A, int j, int n) {
-        int left = 2 * j + 1; 
-        int right = 2 * j + 2; 
+    	
+    	/*maxChildIndex(A, j, n)
+    	k = j
+    	if (2j <= n && A[2j] > A[k]) k <- 2j
+    	if (2j + 1 <= n && A[2j + 1] > A[k]) k <- 2j + 1
+    	if (k = j) return 0 else return k */
+    			
+        int left = 2 * j; 
+        int right = 2 * j + 1; 
 
         if (left >= n) return -1;
     

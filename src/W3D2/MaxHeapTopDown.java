@@ -7,14 +7,12 @@ Write your code in such a way that given an input, your program will return the 
 public class MaxHeapTopDown {	
 	  private static int comparisonCount = 0;
     public static void buildMaxHeapTopDown(int[] A, int n) {
-
         for (int i = 1; i < n; i++) {
             upHeap(A, i);  
         }
     }
 
-    public static void upHeap(int[] A, int i) {
-        int j = i;
+    public static void upHeap(int[] A, int j) {       
         while (j > 0) {
             int parent = (j - 1) / 2;  
             comparisonCount++;  
@@ -34,7 +32,7 @@ public class MaxHeapTopDown {
     }
     
 	public static void main(String[] args) {
-		 int[] A = {3, 5, 1, 10, 2, 7};
+		    int[] A = {3, 5, 1, 10, 2, 7};
 	        int n = A.length;
 	        buildMaxHeapTopDown(A, n);
 	        System.out.println("Max Heap Top Down:");
