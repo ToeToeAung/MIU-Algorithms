@@ -1,5 +1,9 @@
 package W3D2;
-
+/*
+ * [1 point] Question 3.
+Implement Heapsort Phase 2. Write your code in such a way that given an input, your program will return the number of “data item” comparisons. 
+Note that your Heapsort will first call BuildHeap Bottom-Up you had implemented as part of Question 2.
+ * */
 public class HeapSort {
 
     private static int comparisonCount = 0;  
@@ -69,16 +73,12 @@ public class HeapSort {
 
   
     public static void main(String[] args) {
-        int[] A = {3, 5, 1, 10, 2, 7};       
-  
-        heapsort(A);
-    
+        int[] A = {3, 5, 1, 10, 2, 7};         
+        heapsort(A);    
         System.out.println("HeapSort - Sorted Array:");
         for (int num : A) {
             System.out.print(num + " ");
-        }
-
-      
+        }      
         System.out.println("\nTotal Comparisons: " + comparisonCount);
     }
 }

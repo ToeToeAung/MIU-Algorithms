@@ -1,5 +1,9 @@
 package W3D2;
-
+/*
+ * [1 point] Question 1.
+Implement BuildHeap Top-Down.
+Write your code in such a way that given an input, your program will return the number of “data item” comparisons.
+ */
 public class MaxHeapTopDown {	
     public static void buildMaxHeapTopDown(int[] A, int n) {
 
@@ -18,7 +22,6 @@ public class MaxHeapTopDown {
         }
     }
 
-
     private static void swap(int[] A, int i, int j) {
         int temp = A[i];
         A[i] = A[j];
@@ -28,14 +31,10 @@ public class MaxHeapTopDown {
 	public static void main(String[] args) {
 		 int[] A = {3, 5, 1, 10, 2, 7};
 	        int n = A.length;
-
 	        buildMaxHeapTopDown(A, n);
-
 	        System.out.println("Max Heap Top Down:");
 	        for (int num : A) {
 	            System.out.print(num + " ");
 	        }
-
 	}
-
 }

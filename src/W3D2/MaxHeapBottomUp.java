@@ -1,5 +1,9 @@
 package W3D2;
-
+/*
+ * [1 point] Question 2.
+Implement BuildHeap Bottom-Up.
+Write your code in such a way that given an input, your program will return the number of “data item” comparisons.
+ */
 public class MaxHeapBottomUp {
 
     public static void buildMaxHeapBottomUp(int[] A, int n) {       
