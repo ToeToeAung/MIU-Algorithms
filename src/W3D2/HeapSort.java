@@ -14,12 +14,10 @@ public class HeapSort {
             downHeap(A, i, n);
         }
     }
-
   
     public static void downHeap(int[] A, int i, int n) {
         int j = i;
         int k = maxChildIndex(A, j, n);  
-
        
         while (k != 0) {
             comparisonCount++; 
