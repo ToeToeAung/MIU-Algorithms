@@ -59,12 +59,8 @@ public class HeapSort {
 
    
     public static void heapsort(int[] A) {
-        int n = A.length;
-
-    
-        buildMaxHeapBottomUp(A, n);
-
-   
+        int n = A.length;    
+        buildMaxHeapBottomUp(A, n);   
         for (int i = n - 1; i > 0; i--) {
             swap(A, 0, i);  
             downHeap(A, 0, i);  
