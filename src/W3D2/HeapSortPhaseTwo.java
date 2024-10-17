@@ -23,18 +23,16 @@ public class HeapSortPhaseTwo {
             int left = 2 * i + 1;  
             int right = 2 * i + 2; 
           
-            if (left < n) {
+            if (left < n && array[left] > array[maxElement]) {
                 comparisonCount++; 
-                if (array[left] > array[maxElement]) {
+              
                     maxElement = left;
-                }
+                
             }
       
-            if (right < n) {
-                comparisonCount++; 
-                if (array[right] > array[maxElement]) {
-                    maxElement = right;
-                }
+            if (right < n && array[right] > array[maxElement]) {
+                comparisonCount++;        
+                    maxElement = right;            
             }
         
             if (maxElement != i) {
