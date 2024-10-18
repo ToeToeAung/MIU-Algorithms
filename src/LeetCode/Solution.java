@@ -45,16 +45,30 @@ public class Solution {
     }
 	
 	public static String FrequencySort(String s) {
-	      int[] counter = new int['z' - '0' + 1];
-	        for (int i = 0; i < s.length(); i++)
+	        int[] counter = new int['z' - '0' + 1];
+	        int z='z';
+	        int zero='0';
+	        int zminuszero =z- zero +1;
+	        System.out.println("Counter ... "+ z + " zero "+ zero + " array size " +zminuszero );
+	        for (int i = 0; i < s.length(); i++) {
 	            counter[s.charAt(i) - '0']++;
+	            int index = s.charAt(i) - '0';
+	            System.out.println("Within loop " + index);
+	        }
 
 	        List<int[]> list = new ArrayList<>();
-	        for (int i = 0; i < counter.length; i++)
+	        for (int i = 0; i < counter.length; i++) {
 	            list.add(new int[]{i, counter[i]});
+	            
+	            System.out.println("i and counter [i] " + counter[i]);
+	        }
 
 	        Collections.sort(list, (a, b) -> b[1] - a[1]);
 
+	        for(int[] num : list){
+	        	System.out.println("what is in the list - " + num[0]);
+	        }
+	        
 	        StringBuilder sb = new StringBuilder();
 	        for(int[] element : list){
 	            char c = (char)('0' + element[0]);
