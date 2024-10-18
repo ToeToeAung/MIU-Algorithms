@@ -1,9 +1,8 @@
 package LeetCode;
 import java.util.PriorityQueue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Solution {
 
@@ -22,7 +21,7 @@ public class Solution {
 		String str= "tree";
 		String result = "";
 		result= FrequencySort(str);
-		System.out.println("Frequency Sort : " + result);
+		System.out.println(result);
 	}
 	
 	
@@ -46,20 +45,21 @@ public class Solution {
     }
 	
 	public static String FrequencySort(String s) {
-		StringBuilder result=new StringBuilder();
-		Map<Character,Integer> hMap=new HashMap<>();
-		
-		for(char ch : s.toCharArray()) {
-			hMap.put(ch,hMap.getOrDefault(ch,0)+1);			
-		}
-		List<Character> list= new ArrayList(hMap.keySet());
-		list.sort((ob1,ob2) -> hMap.get(ob1) - hMap.get(ob2));
-		
-		for(char ch : list) {
-			for(int i=0;i<hMap.get(ch);i++) {
-				result.append(ch);	
-			}			
-		}
-		return result.toString();
+	      int[] counter = new int['z' - '0' + 1];
+	        for (int i = 0; i < s.length(); i++)
+	            counter[s.charAt(i) - '0']++;
+
+	        List<int[]> list = new ArrayList<>();
+	        for (int i = 0; i < counter.length; i++)
+	            list.add(new int[]{i, counter[i]});
+
+	        Collections.sort(list, (a, b) -> b[1] - a[1]);
+
+	        StringBuilder sb = new StringBuilder();
+	        for(int[] element : list){
+	            char c = (char)('0' + element[0]);
+	            for (int i = 0; i < element[1]; i++) sb.append(c);
+	        }
+	        return sb.toString();
 	}
 }
