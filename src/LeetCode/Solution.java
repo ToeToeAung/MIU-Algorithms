@@ -39,8 +39,72 @@ public class Solution {
 		
 		int numOfIsland2 = numIslands(grid1);
 		System.out.println("Number of islands 2 ** "+ numOfIsland2);
+		
+	  int[][] grid3={{0,0,1,0,0,0,0,1,0,0,0,0,0}
+		,{0,0,0,0,0,0,0,1,1,1,0,0,0}
+		,{0,1,1,0,1,0,0,0,0,0,0,0,0}
+		,{0,1,0,0,1,1,0,0,1,0,1,0,0}
+		,{0,1,0,0,1,1,0,0,1,1,1,0,0}
+		,{0,0,0,0,0,0,0,0,0,0,1,0,0}
+		,{0,0,0,0,0,0,0,1,1,1,0,0,0}
+		,{0,0,0,0,0,0,0,1,1,0,0,0,0}};
+	  
+	  int maxAreaOfIsland = maxAreaOfIsland(grid3);
+	  System.out.println("Max area of Island " + maxAreaOfIsland);
 	}
 	
+	
+  
+    public static int maxAreaOfIsland(int[][] grid) {
+        
+    int maxArea = 0;
+    for (int r=0; r<grid.length; r++){
+    	for (int c=0; c<grid[0].length; c++){
+    		if (grid[r][c] == 1){
+    			int area = expand(grid, r, c, 1);
+    			maxArea = java.lang.Math.max(area, maxArea);
+    		}
+    	}
+    }
+    return maxArea;
+}          
+
+	private static int expand(int[][] grid, int r, int c, int area){
+	
+		if (r<0 || c<0 || r>=grid.length || c>=grid[0].length || grid[r][c]!=1)
+			return 0;
+	
+		grid[r][c] = 0;
+		area += expand(grid, r+1, c, 1);
+		area += expand(grid, r-1, c, 1);
+		area += expand(grid, r, c+1, 1);
+		area += expand(grid, r, c-1, 1);
+		return area;
+	}
+	
+	public static boolean exist(char[][] board, String word) {
+	        for(int i=0;i<board.length;i++){
+	            for(int j=0;j<board[0].length;j++){
+	                if(backTrack(i,j,0,board,word)) return true;
+	            }
+	        }
+	        return false;
+	    }
+	  
+	 public static boolean backTrack(int row, int col, int index, char[][] board, String word){
+	        if(index==word.length()) return true;
+	        if(row<0 || row>=board.length|| col<0 || col>=board[0].length) return false;
+	        char wordLetter = word.charAt(index);
+	        if(board[row][col]!=wordLetter) return false;
+	        board[row][col] = '.';
+	        boolean result = backTrack(row+1,col,index+1,board,word) ||
+	                backTrack(row,col+1,index+1,board,word) || 
+	                backTrack(row-1,col,index+1,board,word) ||
+	                backTrack(row,col-1,index+1,board,word);
+	        board[row][col] = wordLetter;
+	        return result;
+	        
+	    }
 	
 	
 	public static int[][] kClosest(int[][] points, int k) {
