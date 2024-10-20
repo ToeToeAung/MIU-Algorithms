@@ -3,8 +3,6 @@ package LeetCode;
 public class BooleanExpr {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		boolean result = parseBoolExpr("&(|(f))");
 		System.out.println("Result " + result);
 	}
