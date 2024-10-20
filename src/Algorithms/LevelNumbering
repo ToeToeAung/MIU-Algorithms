@@ -1,0 +1,15 @@
+Algorithm: Level numbering (can be done using BFS only)
+Input: A simple connected undirected graph G = (V,E)
+Output: An array indexed with vertices containing level order.
+Initialize a queue Q
+Initialize an array Level[1..n] with value -1.
+Pick a starting vertex s
+Level[s]  0
+Q.add(s)
+while Q   do
+v  Q.dequeue()
+level  Level[v] + 1
+for all vertex w adjacent to v with Level[w] == -1
+Level[w]  level
+Q.add(w)
+return Level

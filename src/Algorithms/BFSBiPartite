@@ -1,0 +1,20 @@
+Algorithm: BFS Bipartite
+Input: A simple connected undirected graph G = (V,E)
+Output: A partition of V(G).
+Is (V0, V1) if G is bipartite and (V(G), ) otherwise.
+Initialize a queue Q
+Initialize an array Color[1..n] with value -1.
+Pick a starting vertex s and Color(s)  0.
+Q.add(s)
+while Q   do
+v  Q.dequeue()
+for all vertex w adjacent to v that is not colored
+if all colored vertices adjacent to w has the same color as v then
+Color[w] = (Color[v] + 1) % 2
+Q.add(w)
+else // color conflict. G is not bipartite
+return (V(G), ).
+// coloring completed.
+V0  all vertices of G colored 0
+V1  all vertices of G colored 1
+return (V0, V1)

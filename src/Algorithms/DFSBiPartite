@@ -1,0 +1,24 @@
+Algorithm: DFS BiPartite
+Input: A simple connected undirected graph G = (V,E)
+Output: A partition of V(G).
+Is (V0, V1) if G is bipartite and (V(G), ) otherwise.
+Initialize a stack S.
+Initialize an array Color[1..n] with value -1.
+// -1 not colored. 0, 1 two different colors
+Pick a starting vertex s and Color(s)  0.
+S.push(s)
+while S   do
+v  S.peek()
+if there a vertex w vertex adjacent to v that is not colored then
+w next vertex adjacent to v to be colored.
+if all colored vertices adjacent to w has the same color as v then
+Color[w] = (Color[v] + 1) % 2
+Push w onto S
+else // color conflict. G is not bipartite
+return (V(G), ).
+else
+S.pop()
+// coloring completed.
+V0  all vertices of G colored 0
+V1  all vertices of G colored 1
+return (V0, V1)
