@@ -8,7 +8,9 @@ public class HeapSortClassNoteVersion {
     }
     public static int maxChildIndex(int[] arr, int j, int n) {
     	int k = j;	
+    	//System.out.println("1. k Values "+ k);
     	if (2*j <= n  && arr[2*j] > arr[k]) k = 2*j;
+    	//System.out.println("2. 2*j " + 2*j);
     	if (2*j + 1 <= n && arr[2*j + 1] > arr[k]) k = 2*j + 1;
     	if (k == j) return 0; else return k;
     }
