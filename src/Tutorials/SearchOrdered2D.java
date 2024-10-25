@@ -21,6 +21,7 @@ public class SearchOrdered2D {
 			} else 
 				return search(M, lr, hr, lc, mc, key);
 		}
+		
 		else if (lc == hc) {
 			int mr = (lr + hr)/2;
 			if (M[mr][lc] == key) {
